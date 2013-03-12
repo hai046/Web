@@ -1,0 +1,57 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<parent>
+		<groupId>com.taobaoke</groupId>
+		<artifactId>taobaoke-root-pom</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>taobaoke-core</artifactId>
+	<packaging>jar</packaging>
+
+	<name>outin-core</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.jade.new</groupId>
+			<artifactId>jade-datasource4jade-new</artifactId>
+			<version>1.0-SNAPSHOT</version>
+			<!-- <exclusions>
+				<exclusion>
+					<groupId>net.paoding</groupId>
+					<artifactId>paoding-rose-scanning</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>net.paoding</groupId>
+					<artifactId>paoding-rose-jade</artifactId>
+				</exclusion>
+			</exclusions> -->
+		</dependency>
+		<dependency>
+			<groupId>com.54chen</groupId>
+			<artifactId>paoding-rose-scanning</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.54chen</groupId>
+			<artifactId>paoding-rose-jade</artifactId>
+			<version>1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-collections</groupId>
+			<artifactId>commons-collections</artifactId>
+			<version>3.2.1</version>
+		</dependency>
+		<dependency>
+			<groupId>redis.clients</groupId>
+			<artifactId>jedis</artifactId>
+			<version>2.0.1-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+</project>

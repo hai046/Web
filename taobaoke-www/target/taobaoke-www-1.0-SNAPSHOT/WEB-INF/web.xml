@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         version="3.0">
+
+
+    <servlet>
+        <servlet-name>cometd</servlet-name>
+        <servlet-class>org.cometd.annotation.AnnotationCometdServlet</servlet-class>
+        <init-param>
+            <param-name>transports</param-name>
+            <param-value>org.cometd.websocket.server.WebSocketTransport</param-value>
+        </init-param>
+        <init-param>
+            <param-name>services</param-name>
+            <param-value>com.taobaoke.www.service.MemberService,com.taobaoke.www.service.SendMessageService</param-value>
+            
+        </init-param>
+        
+        <init-param>
+            <param-name>maxLazyTimeout</param-name>
+            <param-value>2000</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>cometd</servlet-name>
+        <url-pattern>/cometd/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>initializer</servlet-name>
+        <servlet-class>com.taobaoke.www.servlet.BayeuxInitializer</servlet-class>
+        <load-on-startup>2</load-on-startup>
+    </servlet>
+    
+    <!-- 
+    <servlet>
+        <servlet-name>index</servlet-name>
+        <servlet-class>com.taobaoke.www.servlet.IndexServlet</servlet-class>
+        <load-on-startup>3</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>index</servlet-name>
+        <url-pattern>/index</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>barcodepic</servlet-name>
+        <servlet-class>com.taobaoke.www.servlet.BarcodePicServlet</servlet-class>
+        <load-on-startup>4</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>barcodepic</servlet-name>
+        <url-pattern>/barcodepic</url-pattern>
+    </servlet-mapping> -->
+    <!-- 
+    <servlet>
+        <servlet-name>sendMessage</servlet-name>
+        <servlet-class>com.taobaoke.www.servlet.SendMessageServlet</servlet-class>
+        <load-on-startup>3</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>sendMessage</servlet-name>
+        <url-pattern>/sendMessage</url-pattern>
+    </servlet-mapping> -->
+
+    <filter>
+        <filter-name>cross-origin</filter-name>
+        <filter-class>org.eclipse.jetty.servlets.CrossOriginFilter</filter-class>
+        <async-supported>true</async-supported>
+    </filter>
+    <filter-mapping>
+        <filter-name>cross-origin</filter-name>
+        <url-pattern>/cometd/*</url-pattern>
+    </filter-mapping>
+    <filter>
+		<filter-name>roseFilter</filter-name>
+		<filter-class>net.paoding.rose.RoseFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>roseFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>FORWARD</dispatcher>
+		<dispatcher>INCLUDE</dispatcher>
+	</filter-mapping>
+
+</web-app>

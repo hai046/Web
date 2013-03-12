@@ -1,0 +1,27 @@
+@charset "utf-8";
+/* css reset */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,input,textarea,p,blockquote,th,td{margin:0;padding:0}
+table{border-collapse:collapse;border-spacing:0}
+img{border:0}
+address,caption,cite,code,dfn,em,th,var{font-style:normal;font-weight:normal}
+ol,ul{list-style:none}
+caption,th{text-align:left}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}
+select{font-size:12px}
+button{line-height:1.231;white-space:nowrap;vertical-align:middle;cursor:pointer}
+input,textarea,select,button{outline:none;resize:none}
+a{text-decoration:none; color:#006A92}
+a:hover{text-decoration:underline}
+a:focus{outline:none}
+.clear:after{content:'.';clear:both;display:block;height:0;visibility:hidden; font-size:0;line-height:0}
+.clear{ *zoom:1}
+.left{ float: left;}
+.right{ float: right;}
+::selection{ background-color: #ff004d; color: #FFFFFF}
+
+body{ background-color: #f9f9f9}
+.tip_page{ font: 14px/1.75 Microsoft YaHei,"微软雅黑",Tahoma,Arial,sans-serif; text-align: center; color: #333333}
+.fs18{ font-size: 18px}
+.c_pink{ color: #ff004d}
+.tip_page .fd{ width: 566px; border-top: 1px solid #CCCCCC; margin: 10px auto; padding-top: 10px}
+.tip_page .fd h6{ font-size: 18px; font-weight: bold; padding: 5px 0}
